@@ -373,7 +373,11 @@ int clone_fn(void* arg)
 #ifndef __NR_ipc
 #include <sys/types.h>
 #include <sys/ipc.h>
+#ifndef ANDROID
 #include <sys/sem.h>
+#else
+#include "android/sys/sem.h"
+#endif
 
 static int my_ipc (uint call, int first, int second, int third, void *ptr, long fifth)
 {
