@@ -30,7 +30,11 @@
 #include <sys/mman.h>
 #include <sys/types.h>
 #include <sys/ipc.h>
+#ifndef ANDROID
 #include <sys/sem.h>
+#else
+#include "android/sys/sem.h"
+#endif
 #include <setjmp.h>
 #include <sys/vfs.h>
 #include <spawn.h>
@@ -3260,16 +3264,6 @@ EXPORT void my_mcount(void* frompc, void* selfpc)
     // stub doing nothing...
     return;
 }
-
-#ifndef ANDROID
-union semun {
-  int              val;    /* Value for SETVAL */
-  struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
-  unsigned short  *array;  /* Array for GETALL, SETALL */
-  struct seminfo  *__buf;  /* Buffer for IPC_INFO
-                              (Linux-specific) */
-};
-#endif
 
 EXPORT int my_semctl(x86emu_t* emu, int semid, int semnum, int cmd, union semun b)
 {

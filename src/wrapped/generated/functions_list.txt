@@ -233,7 +233,6 @@
 #() lFll
 #() lFpi
 #() lFpp
-#() LFii
 #() LFLi
 #() LFpi
 #() LFpL
@@ -376,6 +375,7 @@
 #() iFiII
 #() iFiuu
 #() iFiup
+#() iFiLi
 #() iFiLN
 #() iFipi
 #() iFipu
@@ -503,7 +503,6 @@
 #() lFppi
 #() lFppL
 #() lFSpl
-#() LFiii
 #() LFLLl
 #() LFLpu
 #() LFLpL
@@ -586,8 +585,6 @@
 #() vFEiip
 #() vFEipp
 #() vFEipV
-#() vFEpii
-#() vFEpiL
 #() vFEpip
 #() vFEpuu
 #() vFEpup
@@ -672,7 +669,6 @@
 #() vFpiUU
 #() vFpifi
 #() vFpipi
-#() vFpipu
 #() vFpipp
 #() vFpipG
 #() vFpIdi
@@ -861,7 +857,6 @@
 #() uFEipp
 #() uFEupp
 #() uFEpup
-#() uFEppu
 #() uFEppp
 #() uFifff
 #() uFippu
@@ -979,7 +974,6 @@
 #() pFpppV
 #() pFSppi
 #() vFEippp
-#() vFEpipu
 #() vFEpuup
 #() vFEpupp
 #() vFEpLLp
@@ -1317,7 +1311,6 @@
 #() pFppiup
 #() pFppipi
 #() pFppipp
-#() pFppuui
 #() pFppuuu
 #() pFppuup
 #() pFppddi
@@ -1408,7 +1401,6 @@
 #() vFpiippi
 #() vFpiippp
 #() vFpiUuup
-#() vFpipiiu
 #() vFpipipV
 #() vFpipppi
 #() vFpipppp
@@ -1531,7 +1523,6 @@
 #() iFppdidd
 #() iFppLupp
 #() iFppLpLp
-#() iFppLppp
 #() iFpppiuu
 #() iFpppipi
 #() iFpppipp
@@ -1591,7 +1582,6 @@
 #() pFdddddd
 #() pFpiiiiu
 #() pFpiiCCC
-#() pFpiiuuu
 #() pFpiUUUU
 #() pFpippip
 #() pFpuuuuu
@@ -2085,7 +2075,6 @@
 #() iFpippddiidd
 #() iFpuupiuiipp
 #() iFpddpippppp
-#() iFppipiippii
 #() iFppuuiiiiii
 #() iFppuuiiuupi
 #() iFpppLLipppp
@@ -2287,6 +2276,7 @@
 #!defined(NOALIGN) iFEivpV -> iFEipV
 wrappedalure:
 wrappedalut:
+wrappedandroidshmem:
 wrappedappindicator:
 wrappedappindicator3:
 wrappedatk:
@@ -3203,60 +3193,6 @@ wrappedlibibus:
 - vFppppippp:
   - ibus_config_set_value_async
 wrappedlibice:
-wrappedlibjpeg:
-- iFv:
-  - jpeg_simd_cpu_support
-- iFp:
-  - jpeg_finish_decompress
-  - jpeg_start_decompress
-- pFp:
-  - jpeg_std_error
-- vFpp:
-  - jpeg_stdio_dest
-  - jpeg_stdio_src
-- iFpi:
-  - jpeg_read_header
-- vFpiL:
-  - jpeg_CreateDecompress
-- vFpip:
-  - jpeg_set_marker_processor
-- uFppu:
-  - jpeg_read_scanlines
-wrappedlibjpeg62:
-- vFp:
-  - jpeg_destroy_compress
-  - jpeg_destroy_decompress
-  - jpeg_finish_compress
-  - jpeg_set_defaults
-- iFv:
-  - jpeg_simd_cpu_support
-- iFp:
-  - jpeg_finish_decompress
-  - jpeg_start_decompress
-- pFp:
-  - jpeg_std_error
-- vFpi:
-  - jpeg_start_compress
-- vFpp:
-  - jpeg_stdio_dest
-  - jpeg_stdio_src
-- iFpi:
-  - jpeg_read_header
-  - jpeg_resync_to_restart
-- vFpii:
-  - jpeg_set_quality
-- vFpiL:
-  - jpeg_CreateCompress
-  - jpeg_CreateDecompress
-- vFpip:
-  - jpeg_set_marker_processor
-- vFppp:
-  - jpeg_mem_dest
-- uFppu:
-  - jpeg_read_scanlines
-  - jpeg_write_scanlines
-- vFpipu:
-  - jpeg_write_marker
 wrappedlibm:
 - UFs:
   - cacosf
@@ -4476,7 +4412,6 @@ wrappedtcmallocminimal:
   - mmap
 - pFpLiiiI:
   - mmap64
-wrappedturbojpeg:
 wrappedudev0:
 wrappedudev1:
 - vFpp:
