@@ -4,6 +4,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifdef ANDROID
+// #include <bits/glibc-syscalls.h>
+#endif
+
 #include <sys/syscall.h>   /* For SYS_xxx definitions */
 #include <unistd.h>
 #include <time.h>

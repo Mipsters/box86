@@ -4,6 +4,11 @@
 #include <math.h>
 #include <string.h>
 
+#ifdef ANDROID
+#define isnanf(x) isnan(x)
+#define isinff(x) isinf(x)
+#endif
+
 #include "debug.h"
 #include "box86stack.h"
 #include "x86emu.h"

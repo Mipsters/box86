@@ -8,6 +8,10 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#ifdef ANDROID
+#define isinff(x) isinf(x)
+#endif
+
 #include "debug.h"
 #include "box86stack.h"
 #include "x86emu.h"
