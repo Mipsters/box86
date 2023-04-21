@@ -115,6 +115,12 @@ As most Phytium (D2000 or FT2000/4) devices run an AARCH64 OS, you'll need an `a
 
 Also, on armbian, you may need to install `libc6-dev-armhf-cross` or you may have an issue with `crt1.o` and a few other files not included with box86.
 
+#### for Android
+
+`mkdir build; cd build; cmake .. -DANDROID=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBAD_SIGNAL=ON; make -j3`
+
+If running from Termux, beforhand install the packages `ndk-multilib libandroid-spawn`
+
 #### for Other ARM64 64bits Linux platform
 
 `mkdir build; cd build; cmake .. -DARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo; make -j3`

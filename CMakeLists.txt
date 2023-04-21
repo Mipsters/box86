@@ -68,10 +68,18 @@ string(COMPARE EQUAL "${CMAKE_HOST_SYSTEM_PROCESSOR}" "x86_64"  _x86_64)
 string(COMPARE EQUAL "${CMAKE_HOST_SYSTEM_PROCESSOR}" "aarch64"  _aarch64)
 string(COMPARE EQUAL "${CMAKE_HOST_SYSTEM_PROCESSOR}" "armhf"  _armhf)
 
-if(_aarch64 AND (RK3399 OR ODROIDN2 OR TEGRAX1 OR RPI3ARM64 OR RPI4ARM64 OR PHYTIUM OR SD845 OR A64 OR LX2160A OR RK3588 OR ARM64))
-    set(CMAKE_C_COMPILER arm-linux-gnueabihf-gcc)
-    #set(CMAKE_ASM_COMPILER arm-linux-gnueabihf-as) #will use gcc in fact
-    set(CMAKE_C_COMPILER_TARGET arm-linux-gnueabihf)
+if(_aarch64)
+    if(RK3399 OR ODROIDN2 OR TEGRAX1 OR RPI3ARM64 OR RPI4ARM64 OR PHYTIUM OR SD845 OR A64 OR LX2160A OR RK3588 OR ARM64)
+        set(CMAKE_C_COMPILER arm-linux-gnueabihf-gcc)
+        #set(CMAKE_ASM_COMPILER arm-linux-gnueabihf-as) #will use gcc in fact
+        set(CMAKE_C_COMPILER_TARGET arm-linux-gnueabihf)
+    elseif(ANDROID)
+        set(CMAKE_C_COMPILER clang)
+        set(CMAKE_CXX_COMPILER clang++)
+        set(ANDROID_TARGET "armv7a-linux-android28")
+        set(CMAKE_C_COMPILER_TARGET "${ANDROID_TARGET}")
+        set(CMAKE_CXX_COMPILER_TARGET "${ANDROID_TARGET}")
+    endif()
 endif()
 
 project(box86 C ASM)
