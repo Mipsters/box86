@@ -3265,6 +3265,16 @@ EXPORT void my_mcount(void* frompc, void* selfpc)
     return;
 }
 
+#ifndef ANDROID
+union semun {
+  int              val;    /* Value for SETVAL */
+  struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
+  unsigned short  *array;  /* Array for GETALL, SETALL */
+  struct seminfo  *__buf;  /* Buffer for IPC_INFO
+                              (Linux-specific) */
+};
+#endif
+
 EXPORT int my_semctl(x86emu_t* emu, int semid, int semnum, int cmd, union semun b)
 {
     (void)emu;
